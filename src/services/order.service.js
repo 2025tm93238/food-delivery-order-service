@@ -3,6 +3,7 @@ const OrderItem = require("../models/OrderItem");
 const { sequelize } = require("../config/db");
 const { errors } = require("../utils/errors");
 const httpClient = require("../utils/httpClient");
+const { ordersPlacedTotal } = require("../middleware/metrics");
 
 const TAX_RATE = 0.05;
 const DELIVERY_FEE = 30;
@@ -146,6 +147,8 @@ const create = async (body, correlationId) => {
     }
     return { order: created.toJSON(), items: rows };
   });
+
+  ordersPlacedTotal.inc();
 
   httpClient.sendNotification(
     {

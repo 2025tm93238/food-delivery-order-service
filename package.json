@@ -21,14 +21,21 @@
   },
   "homepage": "https://github.com/2025tm93238/food-delivery-order-service#readme",
   "dependencies": {
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.50.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.55.0",
+    "@opentelemetry/sdk-node": "^0.55.0",
     "axios": "^1.15.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "joi": "^18.1.2",
     "pg": "^8.20.0",
     "pg-hstore": "^2.3.4",
+    "prom-client": "^15.1.3",
     "sequelize": "^6.37.8",
-    "uuid": "^14.0.0"
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^14.0.0",
+    "yamljs": "^0.3.0"
   },
   "devDependencies": {
     "nodemon": "^3.1.14"
